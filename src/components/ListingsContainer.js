@@ -21,7 +21,7 @@ function ListingsContainer() {
         {data.map((item) => {
           return (
             <ListingCard 
-              onData={item} 
+              data={item} 
               key={item.id}
               onDelete={handleDeleItem}
             />

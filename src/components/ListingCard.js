@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-function ListingCard( { onData, onDelete } ) {
+function ListingCard( { data, onDelete } ) {
   const [favorite, setFavorite] = useState(false)
 
-  const {image, location, description, id} = onData
+  const {image, location, description, id} = data
 
   function handleFavoriteClick() {
     setFavorite((favorite) => !favorite)
@@ -15,7 +15,7 @@ function ListingCard( { onData, onDelete } ) {
       method: "DELETE",
     })
       .then((resp) => resp.json)
-      .then(() => onDelete(onData))
+      .then(() => onDelete(data))
 
   }
 

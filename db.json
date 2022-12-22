@@ -25,12 +25,6 @@
       "location": "Prospect Heights"
     },
     {
-      "id": 5,
-      "description": "wood",
-      "image": "./images/wood.jpg",
-      "location": "Greenpoint"
-    },
-    {
       "id": 6,
       "description": "Beautiful couch",
       "image": "./images/couch.jpg",
