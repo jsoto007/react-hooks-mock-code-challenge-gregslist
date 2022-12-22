@@ -1,11 +1,13 @@
 import React from "react";
 
-function ListingCard() {
+function ListingCard( { onData } ) {
+  const {image, location, description} = onData
+  
   return (
     <li className="card">
       <div className="image">
-        <span className="price">$0</span>
-        <img src={"https://via.placeholder.com/300x300"} alt={"description"} />
+        <span className="price">${}</span>
+        <img src={image} alt={description} />
       </div>
       <div className="details">
         {true ? (
@@ -13,8 +15,8 @@ function ListingCard() {
         ) : (
           <button className="emoji-button favorite">☆</button>
         )}
-        <strong>{"description"}</strong>
-        <span> · {"location"}</span>
+        <strong>{description}</strong>
+        <span> · {location}</span>
         <button className="emoji-button delete">🗑</button>
       </div>
     </li>
