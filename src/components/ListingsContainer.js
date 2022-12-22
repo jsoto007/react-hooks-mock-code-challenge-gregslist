@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import ListingCard from "./ListingCard";
 
-function ListingsContainer() {
+
+
+function ListingsContainer( { searchData }) {
   const [data, setData] = useState([])
 
   useEffect(() => {
@@ -15,10 +17,15 @@ function ListingsContainer() {
     setData(updatedItems)
   }
 
+  const updatedDisplayItems = data.filter((item) => {
+     return (item.description.includes(searchData))
+  })
+
+
   return (
     <main>
       <ul className="cards">
-        {data.map((item) => {
+        {updatedDisplayItems.map((item) => {
           return (
             <ListingCard 
               data={item} 
