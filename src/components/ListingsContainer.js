@@ -10,6 +10,11 @@ function ListingsContainer() {
       .then((data) => setData(data))
   }, [])
 
+  function handleDeleItem(deletedItem) {
+    const updatedItems = data.filter((item) => item.id !== deletedItem.id)
+    setData(updatedItems)
+  }
+
   return (
     <main>
       <ul className="cards">
@@ -18,6 +23,7 @@ function ListingsContainer() {
             <ListingCard 
               onData={item} 
               key={item.id}
+              onDelete={handleDeleItem}
             />
           )
         })}
